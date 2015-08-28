@@ -1,41 +1,38 @@
-article.guide
+//- AK - intro modified for RD-Switchboard project
+article.guide.guide_start
   .container-fluid
     .row
-      .col-sm-4
-        img.img-responsive(src='images/welcome-logo.png')
-        p.lead.text-center {{ neo4j.version }}
-      .col-sm-4
-        h3 Getting started
-        p.lead by learning about Neo4j...
-        br
-        ul.big.undecorated
-          li
-            a(play-topic='intro') Intro
-            |  - a guided tour
-          li
-            a(play-topic='concepts') Concepts
-            |  - GraphDB 101
-          li
-            a(play-topic='cypher') Cypher
-            |  - query language
-      .col-sm-4
-        h3 Jump into code
-        p.lead with a mini graph app...
-        br
-        ul.big.undecorated
-          li
-            a(play-topic='movie-graph') The Movie Graph
-          //- li
-          //-   a(play-topic='network-graph') Network Management
-          //- li
-          //-   a(play-topic='product-graph') Product Recommendations
+      .col-sm-3
+        .box-max
+          .rd-switchboard
+            a.no-out-symbol.logo-img(href='http://rd-switchboard.org/')
+              img.logo(src='images/rd-switchboard-logo.png')
+            .logo-txt
+               a.no-out-symbol(href='http://rd-switchboard.org/')
+                 | RD-Switchboard
+                 span Graph Database
+            .clearfix
+          p.lead.rd-switchboard-intro
+            | Welcome to
+            br
+            | Research Data Switchboard
+            br
+            | Graph Database
+      .col-sm-9
+        .teaser.teaser-3.teaser-intro
+          h3 Neo4j Graph Database
+          p.lead Neo4j Browser is a command driven client, like a web-based shell environment.
+          button.btn.btn-cta(play-topic='intro') Learn More
 
-    .hero-unit
-      p(ng-class="{'motd-bang': motd.callToAction.bang}")
-        a(href="{{ motd.callToAction.u}}") {{ motd.callToAction.d }}
+        .teaser.teaser-3.teaser-intro
+          h3 Graph Concept 101
+          p.lead A graph database can store any kind of data using a few simple concepts
+          button.btn.btn-cta(play-topic='concepts') Learn More
 
-    footer
-      p Copyright &copy;
-        a.no-icon(href='http://neotechnology.com/')  Neo Technology
-        | &nbsp;2002–
-        span= new Date().getFullYear()
+        .teaser.teaser-3.teaser-intro
+          h3 Cypher Language
+          p.lead Neo4j's Cypher language is purpose built for working with graph data.
+          button.btn.btn-cta(play-topic='cypher') Learn More
+
+    footer.tight.tight-intro
+      p.text-muted Powered by Neo4j Technology
