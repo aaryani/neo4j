@@ -29,7 +29,8 @@ angular.module('neo4jApp.controllers')
     'Settings'
     '$timeout'
     ($scope, AuthService, ConnectionStatusService, Frame, Settings, $timeout) ->
-      $scope.username = 'neo4j'
+      # AK - remove default username neo4j
+      $scope.username = ''
       $scope.password = ''
       $scope.current_password = ''
       $scope.connection_summary = ConnectionStatusService.getConnectionStatusSummary()
