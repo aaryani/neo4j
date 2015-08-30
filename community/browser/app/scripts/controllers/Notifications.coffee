@@ -35,36 +35,12 @@ angular.module('neo4jApp.controllers')
       $scope.hasNotifications = () ->
         ($scope.notifications.length > 0)
 
-      $scope.defaultNotifications = [
-          {
-            setting:"shouldReportUdc"
-            message:"Hello and thanks for downloading Neo4j! Help us make Neo4j even better by sharing <a href='http://neo4j.com/legal/neo4j-user-experience/'> non&#8209;sensitive data</a>. Would that be OK?"
-            style:"warning"
-            options:[
-              {
-                label: "Yes, I'm happy to help!"
-                icon: "fa-smile-o"
-                btn: "btn-good"
-                value: true
-              }
-              {
-                label: "Sorry no, but good luck"
-                icon: "fa-frown-o"
-                btn: "btn-neutral"
-                value: false
-              }
-            ]
-          }
-        ]
+      # AK remove default Notification about stats reporting
+      $scope.defaultNotifications = []
 
       $scope.rememberThenDismiss = (notification, value) =>
         Settings[notification.setting] = value
         SettingsStore.save()
         $scope.notifications.shift()
-
-      angular.forEach($scope.defaultNotifications, (notification) =>
-        if not (Settings[notification.setting]?)
-          $scope.notifications.push(notification)
-      )
 
   ]

@@ -92,7 +92,8 @@ angular.module('neo4jApp.services')
         pingLater: (event) =>
           timer = $timeout(
             () =>
-              @ping(event)
+              # AK - Disable statistics pings to Neo4J
+              #@ping(event)
             ,
             (Settings.heartbeat * 1000)
           )
